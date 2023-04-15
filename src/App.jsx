@@ -1,16 +1,13 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Balloon from "./components/Balloon";
+import FrequencyTable from "./pages/FrequencyTable";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="bg-black text-white">
-     hiii
+    <div className="">
+      <FrequencyTable />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
