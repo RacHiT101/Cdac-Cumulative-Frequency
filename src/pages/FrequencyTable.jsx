@@ -1,13 +1,96 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Balloon from "../components/Balloon";
+import {useDrop} from 'react-dnd';
 
 const FrequencyTable = () => {
-  const quantity = 0;
-  const quantity4 = 0;
-  const quantity3 = 0;
-  const quantity1 = 0;
-  const quantity2 = 0;
+  const [quantity, setQuantity] = useState(0);
+  const [quantity1, setQuantity1] = useState(0);
+  const [quantity2, setQuantity2] = useState(0);
+  const [quantity3, setQuantity3] = useState(0);
+  const [quantity4, setQuantity4] = useState(0);
+
+  const handleIncrement = () => {
+    if(item>0 && item <=10 )
+      setQuantity(quantity+1);
+  }
+
+  // const [{ canDrop, isOver }, drop] = useDrop(() => ({
+  //   accept: "balloon",
+  //   drop: (item) => {
+  //     switch (item.value) {
+  //       case 0:
+  //       case 1:
+  //       case 2:
+  //       case 3:
+  //       case 4:
+  //       case 5:
+  //       case 6:
+  //       case 7:
+  //       case 8:
+  //       case 9:
+  //       case 10:
+  //         setQuantity(quantity + item.value);
+  //         break;
+  //       case 11:
+  //       case 12:
+  //       case 13:
+  //       case 14:
+  //       case 15:
+  //       case 16:
+  //       case 17:
+  //       case 18:
+  //       case 19:
+  //       case 20:
+  //         setQuantity1(quantity1 + item.value);
+  //         break;
+  //       case 21:
+  //       case 22:
+  //       case 23:
+  //       case 24:
+  //       case 25:
+  //       case 26:
+  //       case 27:
+  //       case 28:
+  //       case 29:
+  //       case 30:
+  //         setQuantity2(quantity2 + item.value);
+  //         break;
+  //       case 31:
+  //       case 32:
+  //       case 33:
+  //       case 34:
+  //       case 35:
+  //       case 36:
+  //       case 37:
+  //       case 38:
+  //       case 39:
+  //       case 40:
+  //         setQuantity3(quantity3 + item.value);
+  //         break;
+  //       case 41:
+  //       case 42:
+  //       case 43:
+  //       case 44:
+  //       case 45:
+  //       case 46:
+  //       case 47:
+  //       case 48:
+  //       case 49:
+  //       case 50:
+  //         setQuantity4(quantity4 + item.value);
+  //         break;
+  //       default:
+  //         break;
+  //     }
+  //   },
+  //   collect: (monitor) => ({
+  //     isOver: monitor.isOver(),
+  //     canDrop: monitor.canDrop(),
+  //   }),
+  // }));
+
+
   return (
     <div className="flex justify-center gap-3 mt-10">
       <div className="bg-[#BFACE2] opacity-100 flex justify-center items-center h-[600px] shadow-md shadow-slate-600 w-[35vw] rounded-2xl">
@@ -30,7 +113,7 @@ const FrequencyTable = () => {
               <div className="text-2xl font-semibold"> {quantity} </div>
               <button
                 type="button"
-                // onClick={handleIncrement}
+                onClick={handleIncrement}
                 className=" input-group-text bg-white h-8 rounded-sm  w-12"
               >
                 +

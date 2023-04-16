@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import "../styles.css";
 import { motion } from "framer-motion";
+import Draggable from 'react-draggable';
 
 function Balloon() {
   const [end, setEnd] = useState(false);
   const [popped, setPopped] = useState(false);
   const [random, setrandom] = useState(null);
-
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  console.log(position)
 
 //   function animateSVG() {
 //     const animation = document.querySelector("animateTransform");
@@ -69,18 +71,24 @@ function Balloon() {
       <div id="lil-monster" className="relative">
         <div className="eye bg-white rounded-full absolute"></div>
         <div className="eye right bg-white rounded-full absolute"></div>
+        
         {popped && (
           <motion.div
-            drag
-            onDragStart={(event) => event.dataTransfer.setData("text", random)}
+            // drag
+            // onDragStart={(event) => event.dataTransfer.setData("text", random)}
             className="flex relative justify-center"
             initial={{}}
             animate={{ y: [-10, 0, -10], scale: 1, opacity: 1 }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
-            <span className="text-5xl relative  font-semibold text-pink-700 top-28">
-              {random}
-            </span>
+            <Draggable
+            position={position}
+            onStop={(event, data) => setPosition({ x: data.x, y: data.y })}
+            >
+            <div className="text-6xl relative  font-bold text-pink-700 top-28 ">
+              {random}              
+            </div>
+            </Draggable>
           </motion.div>
         )}
          {/* <div onDrop={handleDrop} className="drop-area"></div> */}
