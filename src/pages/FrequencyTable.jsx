@@ -3,9 +3,6 @@ import { motion } from "framer-motion";
 import Balloon from "../components/Balloon";
 
 const FrequencyTable = () => {
-
-    
-
   const quantity = 0;
   const quantity4 = 0;
   const quantity3 = 0;
@@ -17,60 +14,72 @@ const FrequencyTable = () => {
         <Balloon/>
       </div>
       <div className="flex gap-3 flex-col">
-        <div className=" bg-[#BFDCE5] h-full shadow-md shadow-slate-600 w-[25vw] rounded-xl pr-5">
-          <div className="grid grid-cols-3 justify-items-center text-xl ">
-            <div className="lg:text-2xl text-lg font-semibold py-5">Marks</div>
+        <div className=" bg-[#BFDCE5] h-full shadow-md shadow-slate-600 w-[25vw] rounded-xl px-12">
+          <div className=" text-xl ">
+            <div className="flex justify-evenly mx-auto">
+            <div className="lg:text-2xl text-lg font-semibold py-5">Value</div>
             <div className="lg:text-2xl text-lg font-semibold py-5 ">
               Frequency
             </div>
             <div className="lg:text-2xl text-lg font-semibold py-5 ">
               Increase
             </div>
-            <div className="pb-4"> 0 - 10 </div>
-            <div className="pb-4"> {quantity} </div>
-            <button
-              type="button"
-              // onClick={handleIncrement}
-              className=" input-group-text bg-white h-6 px-2  "
-            >
-              +
-            </button>
-            <div className="pb-4"> 10 - 20 </div>
-            <div className="pb-4"> {quantity1} </div>
-            <button
-              type="button"
-              // onClick={handleIncrement1}
-              className="input-group-text bg-white h-6 px-2"
-            >
-              +
-            </button>
-            <div className="pb-4"> 20 - 30 </div>
-            <div className="pb-4"> {quantity2} </div>
-            <button
-              type="button"
-              // onClick={handleIncrement2}
-              className="input-group-text bg-white h-6 px-2"
-            >
-              +
-            </button>
-            <div className="pb-4"> 30 - 40 </div>
-            <div className="pb-4"> {quantity3} </div>
-            <button
-              type="button"
-              // onClick={handleIncrement3}
-              className="input-group-text bg-white h-6 px-2"
-            >
-              +
-            </button>
-            <div className="pb-4"> 40 - 50 </div>
-            <div className="pb-4"> {quantity4} </div>
-            <button
-              type="button"
-              // onClick={handleIncrement4}
-              className="input-group-text bg-white h-6 px-2"
-            >
-              +
-            </button>
+            </div>
+            <div className="flex py-4 justify-evenly shadow-2xl shadow-slate-600 rounded-lg my-5 items-center">
+              <div className="text-2xl font-semibold"> 0 - 10 </div>
+              <div className="text-2xl font-semibold"> {quantity} </div>
+              <button
+                type="button"
+                // onClick={handleIncrement}
+                className=" input-group-text bg-white h-8 rounded-sm  w-12"
+              >
+                +
+              </button>
+            </div>
+            <div className="flex py-4 justify-evenly shadow-2xl shadow-slate-600 rounded-lg my-5 items-center">
+              <div className="text-2xl font-semibold"> 10 - 20 </div>
+              <div className="text-2xl font-semibold"> {quantity1} </div>
+              <button
+                type="button"
+                // onClick={handleIncrement}
+                className=" input-group-text bg-white h-8 rounded-sm  w-12"
+              >
+                +
+              </button>
+            </div>
+            <div className="flex py-4 justify-evenly shadow-2xl shadow-slate-600 rounded-lg my-5 items-center">
+              <div className="text-2xl font-semibold"> 20 - 30 </div>
+              <div className="text-2xl font-semibold"> {quantity2} </div>
+              <button
+                type="button"
+                // onClick={handleIncrement}
+                className=" input-group-text bg-white h-8 rounded-sm  w-12"
+              >
+                +
+              </button>
+            </div>
+            <div className="flex py-4 justify-evenly shadow-2xl shadow-slate-600 rounded-lg my-5 items-center">
+              <div className="text-2xl font-semibold"> 30 - 40 </div>
+              <div className="text-2xl font-semibold"> {quantity3} </div>
+              <button
+                type="button"
+                // onClick={handleIncrement}
+                className=" input-group-text bg-white h-8 rounded-sm  w-12"
+              >
+                +
+              </button>
+            </div>
+            <div className="flex py-4 justify-evenly shadow-2xl shadow-slate-600 rounded-lg my-5 items-center">
+              <div className="text-2xl font-semibold"> 40 - 50</div>
+              <div className="text-2xl font-semibold"> {quantity4} </div>
+              <button
+                type="button"
+                // onClick={handleIncrement}
+                className=" input-group-text bg-white h-8 rounded-sm  w-12"
+              >
+                +
+              </button>
+            </div>
           </div>
           <hr className="bg-black h-1 border-none mx-auto w-16" />
           {/* <div className="flex justify-center mt-3 text-xl">{Frequency}</div> */}

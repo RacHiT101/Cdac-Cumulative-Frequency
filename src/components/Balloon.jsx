@@ -7,6 +7,7 @@ function Balloon() {
   const [popped, setPopped] = useState(false);
   const [random, setrandom] = useState(null);
 
+
 //   function animateSVG() {
 //     const animation = document.querySelector("animateTransform");
 //     animation.setAttribute("begin", "0s");
@@ -31,6 +32,12 @@ function Balloon() {
         }
       }
     }
+    const handleDrop = (event) => {
+      event.preventDefault();
+      const data = event.dataTransfer.getData("text");
+      setDroppedNumber(data);
+      console.log(data)
+    };
 
     document.addEventListener("mousemove", onMouseMove);
 
@@ -64,17 +71,20 @@ function Balloon() {
         <div className="eye right bg-white rounded-full absolute"></div>
         {popped && (
           <motion.div
+            drag
+            onDragStart={(event) => event.dataTransfer.setData("text", random)}
             className="flex relative justify-center"
             initial={{}}
             animate={{ y: [-10, 0, -10], scale: 1, opacity: 1 }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
-            <span className="text-5xl relative font-semibold text-pink-700 top-28">
+            <span className="text-5xl relative  font-semibold text-pink-700 top-28">
               {random}
             </span>
           </motion.div>
         )}
-        <div id="svg-container">
+         {/* <div onDrop={handleDrop} className="drop-area"></div> */}
+        <div id="svg-container" className="mt-20">
           <svg
             width="348px"
             height="605px"
@@ -506,7 +516,9 @@ function Balloon() {
             </g>
           </svg>
         </div>
+        
       </div>
+     
       {/* <button onClick={animateSVG} className="bg-black text-white">Animate</button> */}
     </div>
   );
