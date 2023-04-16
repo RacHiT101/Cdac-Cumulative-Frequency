@@ -69,16 +69,16 @@ function Balloon() {
   return (
     <div id="balloon" className={popped ? "popped" : ""} onClick={onClick}>
       <div id="lil-monster" className="relative">
-        <div className="eye bg-white rounded-full absolute"></div>
-        <div className="eye right bg-white rounded-full absolute"></div>
+        <div className="eye bg-white  "></div>
+        <div className="eye right bg-white"></div>
         
         {popped && (
           <motion.div
             // drag
             // onDragStart={(event) => event.dataTransfer.setData("text", random)}
-            className="flex relative justify-center"
+            className="flex justify-center"
             initial={{}}
-            animate={{ y: [-10, 0, -10], scale: 1, opacity: 1 }}
+            animate={{ y: [-10, 0, -10] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
             <Draggable
@@ -92,7 +92,7 @@ function Balloon() {
           </motion.div>
         )}
          {/* <div onDrop={handleDrop} className="drop-area"></div> */}
-        <div id="svg-container" className="mt-20">
+        <div id="svg-container" className="">
           <svg
             width="348px"
             height="605px"

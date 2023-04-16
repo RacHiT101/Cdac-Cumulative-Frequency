@@ -93,7 +93,7 @@ const FrequencyTable = () => {
 
   return (
     <div className="flex justify-center gap-3 mt-10">
-      <div className="bg-[#BFACE2] opacity-100 flex justify-center items-center h-[600px] shadow-md shadow-slate-600 w-[35vw] rounded-2xl">
+      <div className="bg-[#BFACE2] opacity-100 flex justify-center h-[600px] shadow-md shadow-slate-600 w-[35vw] rounded-2xl">
         <Balloon/>
       </div>
       <div className="flex gap-3 flex-col">
