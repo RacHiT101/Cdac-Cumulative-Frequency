@@ -11,18 +11,15 @@ import {
 } from "recharts";
 
 function Page3TH() {
-  
-
   const [field, setField] = useState([
-    { name: "", field1: "" },
-    { name: "10", field2: "" },
-    { name: "20", field3: "" },
-    { name: "30", field4: "" },
-    { name: "40", field5: "" },
+    { name: "0", field: "" },
+    { name: "10", field: "" },
+    { name: "20", field: "" },
+    { name: "30", field: "" },
+    { name: "40", field: "" },
   ]);
-  console.log(field);
-  
 
+  console.log(field);
   return (
     <>
       <div className="w-max mt-5 mx-auto font-poppins text-[#000000] border-blue-200 border-4 p-5 rounded-2xl">
@@ -48,12 +45,11 @@ function Page3TH() {
                     <div className="text-lg pb-1"> 2</div>
                     <div className="text-base pb-4"> MORE THAN 0</div>
                     <input
-                      type="number"
-                      value={field[0].field1}
-                      placeholder="0"
+                      type="text"
+                      value={field[0].field}
                       onChange={(event) =>
                         setField((prevState) => [
-                          { ...prevState[0], field1: event.target.value },
+                          { ...prevState[0], field: event.target.value },
                           ...prevState.slice(1),
                         ])
                       }
@@ -63,13 +59,12 @@ function Page3TH() {
                     <div className="text-lg pb-1"> 3 </div>
                     <div className="text-base pb-4"> MORE THAN 10</div>
                     <input
-                      type="number"
-                      value={field[1].field2}
-                      placeholder="0"
+                      type="text"
+                      value={field[1].field}
                       onChange={(event) =>
                         setField((prevState) => [
                           ...prevState.slice(0, 1),
-                          { ...prevState[1], field2: event.target.value },
+                          { ...prevState[1], field: event.target.value },
                           ...prevState.slice(2),
                         ])
                       }
@@ -79,13 +74,12 @@ function Page3TH() {
                     <div className="text-lg pb-1"> 8 </div>
                     <div className="text-base pb-4"> MORE THAN 20</div>
                     <input
-                      type="number"
-                      value={field[2].field3}
-                      placeholder="0"
+                      type="text"
+                      value={field[2].field}
                       onChange={(event) =>
                         setField((prevState) => [
                           ...prevState.slice(0, 2),
-                          { ...prevState[2], field3: event.target.value },
+                          { ...prevState[2], field: event.target.value },
                           ...prevState.slice(3),
                         ])
                       }
@@ -94,13 +88,12 @@ function Page3TH() {
                     <div className="text-lg pb-1"> 7 </div>
                     <div className="text-base pb-4"> MORE THAN 30</div>
                     <input
-                      type="number"
-                      value={field[3].field4}
-                      placeholder="0"
+                      type="text"
+                      value={field[3].field}
                       onChange={(event) =>
                         setField((prevState) => [
                           ...prevState.slice(0, 3),
-                          { ...prevState[3], field4: event.target.value },
+                          { ...prevState[3], field: event.target.value },
                           ...prevState.slice(4),
                         ])
                       }
@@ -109,13 +102,12 @@ function Page3TH() {
                     <div className="text-lg pb-1"> 5 </div>
                     <div className="text-base pb-4"> MORE THAN 40</div>
                     <input
-                      type="number"
-                      value={field[4].field5}
-                      placeholder="0"
+                      type="text"
+                      value={field[4].field}
                       onChange={(event) =>
                         setField((prevState) => [
                           ...prevState.slice(0, 4),
-                          { ...prevState[4], field5: event.target.value },
+                          { ...prevState[4], field: event.target.value },
                         ])
                       }
                     />
@@ -131,7 +123,7 @@ function Page3TH() {
                     width={600}
                     height={100}
                     data={field}
-                    margin={{   
+                    margin={{
                       top: 20,
                       right: 50,
                       left: 10,
@@ -143,11 +135,11 @@ function Page3TH() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="field1" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="field2" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="field" stroke="#8884d8" />
+                    {/* <Line type="monotone" dataKey="field2" stroke="#8884d8" />
                     <Line type="monotone" dataKey="field3" stroke="#8884d8" />
                     <Line type="monotone" dataKey="field4" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="field5" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="field5" stroke="#8884d8" /> */}
 
                     {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
                   </LineChart>

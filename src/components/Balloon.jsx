@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import "../styles.css";
 import { motion } from "framer-motion";
 import Draggable from "react-draggable";
@@ -8,7 +8,7 @@ function Balloon() {
   const [popped, setPopped] = useState(false);
   const [random, setrandom] = useState(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  console.log(position);
+  console.log(position)
 
   // function restartAnimation() {
   //   const animation = document.querySelector("booAnimation");
@@ -39,7 +39,7 @@ function Balloon() {
       event.preventDefault();
       const data = event.dataTransfer.getData("text");
       setDroppedNumber(data);
-      console.log(data);
+      // console.log(data)
     };
 
     document.addEventListener("mousemove", onMouseMove);
@@ -57,13 +57,13 @@ function Balloon() {
   useEffect(() => {
     if (popped) {
       setrandom(Math.floor(Math.random() * 50));
-      console.log(random);
+      // console.log(random);
     }
   }, [popped]);
 
   useEffect(() => {
     if (random !== null) {
-      console.log(random);
+      // console.log(random);
     }
   }, [random]);
 
@@ -86,9 +86,9 @@ function Balloon() {
               position={position}
               onStop={(event, data) => setPosition({ x: data.x, y: data.y })}
             >
-              <div className="text-6xl relative  font-bold text-pink-700 top-28 ">
-                {random}
-              </div>
+            <div className="text-4xl relative  font-bold text-pink-700 top-28 ">
+              {random}              
+            </div>
             </Draggable>
           </motion.div>
         )}
