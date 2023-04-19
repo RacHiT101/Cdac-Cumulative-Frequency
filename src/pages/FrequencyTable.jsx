@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef,useEffect } from "react";
 import { motion } from "framer-motion";
 import Balloon from "../components/Balloon";
 import {useDrop} from 'react-dnd';
@@ -9,6 +9,28 @@ const FrequencyTable = () => {
   const [quantity2, setQuantity2] = useState(0);
   const [quantity3, setQuantity3] = useState(0);
   const [quantity4, setQuantity4] = useState(0);
+  const boxRef = useRef();
+  const [x, setX] = useState();
+  const [y, setY] = useState();
+  const getPosition = () => {
+    const x = boxRef.current.offsetLeft;
+    setX(x);
+
+    const y = boxRef.current.offsetTop;
+    setY(y);
+  };
+
+  // Get the position of the red box in the beginning
+  useEffect(() => {
+    getPosition();
+  }, []);
+  console.log(x);
+  console.log(y);
+
+  // Re-calculate X and Y of the red box when the window is resized by the user
+  useEffect(() => {
+    window.addEventListener("resize", getPosition);
+  }, []);
 
   const handleIncrement = () => {
     if(item>0 && item <=10 )
@@ -119,7 +141,7 @@ const FrequencyTable = () => {
                 +
               </button>
             </div>
-            <div className="flex py-4 justify-evenly shadow-2xl shadow-slate-600 rounded-lg my-5 items-center">
+            <div className="flex py-4 justify-evenly shadow-2xl shadow-slate-600 rounded-lg my-5 items-center" ref={boxRef}>
               <div className="text-2xl font-semibold"> 10 - 20 </div>
               <div className="text-2xl font-semibold"> {quantity1} </div>
               <button
