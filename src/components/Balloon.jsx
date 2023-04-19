@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import "../styles.css";
 import { motion } from "framer-motion";
-import Draggable from 'react-draggable';
+import Draggable from "react-draggable";
 
 function Balloon() {
   const [end, setEnd] = useState(false);
   const [popped, setPopped] = useState(false);
   const [random, setrandom] = useState(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  console.log(position)
+  console.log(position);
 
-//   function animateSVG() {
-//     const animation = document.querySelector("animateTransform");
-//     animation.setAttribute("begin", "0s");
-//   }
+  // function restartAnimation() {
+  //   const animation = document.querySelector("booAnimation");
+  //   animation.setAttribute("begin", "0s");
+  //   animation.setCurrentTime(0);
+  // }
 
   useEffect(() => {
     function onMouseMove(event) {
@@ -38,7 +39,7 @@ function Balloon() {
       event.preventDefault();
       const data = event.dataTransfer.getData("text");
       setDroppedNumber(data);
-      console.log(data)
+      console.log(data);
     };
 
     document.addEventListener("mousemove", onMouseMove);
@@ -67,11 +68,11 @@ function Balloon() {
   }, [random]);
 
   return (
-    <div id="balloon" className={popped ? "popped" : ""} onClick={onClick}>
+    <div id="balloon" className={popped ? "popped" : ""}>
       <div id="lil-monster" className="relative">
         <div className="eye bg-white  "></div>
         <div className="eye right bg-white"></div>
-        
+
         {popped && (
           <motion.div
             // drag
@@ -82,16 +83,16 @@ function Balloon() {
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
             <Draggable
-            position={position}
-            onStop={(event, data) => setPosition({ x: data.x, y: data.y })}
+              position={position}
+              onStop={(event, data) => setPosition({ x: data.x, y: data.y })}
             >
-            <div className="text-6xl relative  font-bold text-pink-700 top-28 ">
-              {random}              
-            </div>
+              <div className="text-6xl relative  font-bold text-pink-700 top-28 ">
+                {random}
+              </div>
             </Draggable>
           </motion.div>
         )}
-         {/* <div onDrop={handleDrop} className="drop-area"></div> */}
+        {/* <div onDrop={handleDrop} className="drop-area"></div> */}
         <div id="svg-container" className="">
           <svg
             width="348px"
@@ -299,10 +300,12 @@ function Balloon() {
                   begin="balloonAnimation.begin"
                 />
               </path>
+
               <path
                 d="M211.894498,131.834108 C215.904746,135.5112 217.688551,138.199543 217.245913,139.899137 C216.877709,141.312931 210.502923,139.123936 208.119946,139.000975 C205.736969,138.878015 200.039275,140.385907 199.839543,139.000975 C199.592277,137.286441 201.431047,134.838742 205.355855,131.657875 C205.140246,131.401003 205.043001,131.17509 205.06412,130.980138 C205.098792,130.66007 205.470589,130.25655 206.17951,129.769577 C206.583358,129.85556 206.951225,129.925943 207.283114,129.980726 C192.689684,119.050115 182.991329,110.551931 178.18805,104.486174 C166.221693,89.3746182 161.628308,72.5923554 160.168662,58.1457247 C159.681718,53.3262729 162.218333,29.4248428 174.540596,15.9356024 C186.233538,3.1352823 207.541717,0.599835319 214.298668,0.402418686 C221.136004,0.202653458 240.039625,2.92171325 248.702744,15.9356024 C257.622936,29.335669 256.193536,53.1341955 255.325164,59.514256 C253.598461,72.2006103 247.638423,96.6993298 223.183522,120.842596 C221.003634,122.994705 216.767455,126.02785 210.474986,129.942032 C210.781218,129.894002 211.116234,129.836517 211.480034,129.769577 C212.128812,130.287976 212.4532,130.691496 212.4532,130.980138 C212.4532,131.198843 212.266966,131.483499 211.894498,131.834108 Z"
                 id="balloon"
                 fill="#FF804B"
+                onClick={onClick}
               >
                 <animate
                   dur="0.05s"
@@ -523,11 +526,11 @@ function Balloon() {
               </g>
             </g>
           </svg>
+          
         </div>
-        
       </div>
-     
-      {/* <button onClick={animateSVG} className="bg-black text-white">Animate</button> */}
+
+      {/* <button onClick={restartAnimation} className="bg-black text-white">Animate</button> */}
     </div>
   );
 }
