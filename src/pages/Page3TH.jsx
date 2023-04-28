@@ -14,14 +14,14 @@ function Page3TH(props) {
     console.log(props.quantity)
     
   const [field, setField] = useState([
-    { name: "0", field: "" },
-    { name: "10", field: "" },
+    { name: "10", field: ""},
     { name: "20", field: "" },
     { name: "30", field: "" },
-    { name: "40", field: "" },
+    { name: "40", field: ""},
+    { name: "50", field: "" },
   ]);
+  
 
-  console.log(field);
   return (
     <>
       <div className="w-max mt-5 mx-auto font-poppins text-[#000000] border-blue-200 border-4 p-5 rounded-2xl">
