@@ -15,7 +15,8 @@ const FrequencyTable = () => {
   const [y, setY] = useState();
   const getPosition = () => {
     const x = boxRef.current.offsetLeft;
-    setX(x)
+    setX(x);
+    setQuantity(10)
     const y = boxRef.current.offsetTop;
     setY(y);
   };
@@ -38,12 +39,12 @@ const FrequencyTable = () => {
 
   return (
     <div className="flex flex-col gap-10">
-      <div className="flex justify-center gap-3 mt-10 h-max">
-        <div className="bg-[#BFACE2] opacity-100 flex justify-center h-[600px] shadow-md shadow-slate-600 w-[35vw] rounded-2xl">
-          <Balloon />
+      <div className="flex justify-center gap-3 mt-10">
+        <div className="bg-[#BFACE2] p-5 opacity-100 flex h-[650px] justify-center shadow-md shadow-slate-600 rounded-2xl">
+          <Balloon className="" />
         </div>
-        <div className="flex gap-3 flex-col">
-          <div className=" bg-[#BFDCE5] h-full shadow-md shadow-slate-600 w-[25vw] rounded-xl px-12">
+        <div className="flex gap-3 flex-col h-[650px] ">
+          <div className=" bg-[#BFDCE5] h-full shadow-md shadow-slate-600 rounded-xl px-12">
             <div className=" text-xl ">
               <div className="flex justify-evenly mx-auto">
                 <div className="lg:text-2xl text-lg font-semibold py-5">
@@ -119,7 +120,7 @@ const FrequencyTable = () => {
             {/* <div className="flex justify-center mt-3 text-xl">{Frequency}</div> */}
           </div>
 
-          <div className="bg-[#BFACE2] shadow-md shadow-slate-600 h-52 flex items-center px-3 w-[25vw] rounded-xl">
+          <div className="bg-[#BFACE2] shadow-md shadow-slate-600 h-52 flex items-center px-3 rounded-xl">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
           </div>
         </div>
@@ -137,7 +138,7 @@ const FrequencyTable = () => {
         quantity2={quantity2}
         quantity3={quantity3}
         quantity4={quantity4}
-        className = "hidden"
+        className=""
       />
     </div>
   );

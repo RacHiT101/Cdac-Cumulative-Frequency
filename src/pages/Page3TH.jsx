@@ -11,16 +11,15 @@ import {
 } from "recharts";
 
 function Page3TH(props) {
-    console.log(props.quantity)
-    
+  console.log(props.quantity);
+
   const [field, setField] = useState([
-    { name: "10", field: ""},
+    { name: "10", field: "" },
     { name: "20", field: "" },
     { name: "30", field: "" },
-    { name: "40", field: ""},
+    { name: "40", field: "" },
     { name: "50", field: "" },
   ]);
-  
 
   return (
     <>
@@ -44,10 +43,13 @@ function Page3TH(props) {
                       Cumulative Frequency
                     </div>
                     <div className="text-lg pb-1"> 0 - 10 </div>
-                    <div className="text-lg pb-1"> {!props.quantity && props.quantity}</div>
+                    <div className="text-lg pb-1">
+
+                      {!props.quantity && props.quantity}
+                    </div>
                     <div className="text-base pb-4"> MORE THAN 0</div>
                     <input
-                    className="w-12 mb-2 rounded "
+                      className="w-12 mb-2 rounded "
                       type="number"
                       value={field[0].field}
                       onChange={(event) =>
@@ -62,7 +64,7 @@ function Page3TH(props) {
                     <div className="text-lg pb-1"> {props.quantity1} </div>
                     <div className="text-base pb-4"> MORE THAN 10</div>
                     <input
-                    className="w-12 mb-2 rounded "
+                      className="w-12 mb-2 rounded "
                       type="number"
                       value={field[1].field}
                       onChange={(event) =>
@@ -78,7 +80,7 @@ function Page3TH(props) {
                     <div className="text-lg pb-1">{props.quantity2}</div>
                     <div className="text-base pb-4"> MORE THAN 20</div>
                     <input
-                    className="w-12 mb-2 rounded "
+                      className="w-12 mb-2 rounded "
                       type="number"
                       value={field[2].field}
                       onChange={(event) =>
@@ -90,10 +92,10 @@ function Page3TH(props) {
                       }
                     />
                     <div className="text-lg pb-1"> 30 - 40 </div>
-                    <div className="text-lg pb-1"> {  props.quantity3} </div>
+                    <div className="text-lg pb-1"> {props.quantity3} </div>
                     <div className="text-base pb-4"> MORE THAN 30</div>
                     <input
-                    className="w-12 mb-2 rounded "
+                      className="w-12 mb-2 rounded "
                       type="number"
                       value={field[3].field}
                       onChange={(event) =>
@@ -108,7 +110,7 @@ function Page3TH(props) {
                     <div className="text-lg pb-1"> {props.quantity4} </div>
                     <div className="text-base pb-4"> MORE THAN 40</div>
                     <input
-                    className="w-12 mb-2 rounded "
+                      className="w-12 mb-2 rounded "
                       type="number"
                       value={field[4].field}
                       onChange={(event) =>
