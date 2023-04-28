@@ -10,12 +10,6 @@ function Balloon() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   console.log(position)
 
-  // function restartAnimation() {
-  //   const animation = document.querySelector("booAnimation");
-  //   animation.setAttribute("begin", "0s");
-  //   animation.setCurrentTime(0);
-  // }
-
   useEffect(() => {
     function onMouseMove(event) {
       const eyes = document.getElementsByClassName("eye");

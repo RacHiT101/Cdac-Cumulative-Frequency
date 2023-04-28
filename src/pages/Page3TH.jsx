@@ -10,7 +10,9 @@ import {
   Tooltip,
 } from "recharts";
 
-function Page3TH() {
+function Page3TH(props) {
+    console.log(props.quantity)
+    
   const [field, setField] = useState([
     { name: "0", field: "" },
     { name: "10", field: "" },
@@ -42,9 +44,10 @@ function Page3TH() {
                       Cumulative Frequency
                     </div>
                     <div className="text-lg pb-1"> 0 - 10 </div>
-                    <div className="text-lg pb-1"> 2</div>
+                    <div className="text-lg pb-1"> {!props.quantity && props.quantity}</div>
                     <div className="text-base pb-4"> MORE THAN 0</div>
                     <input
+                    className="w-12 mb-2 rounded "
                       type="number"
                       value={field[0].field}
                       onChange={(event) =>
@@ -56,9 +59,10 @@ function Page3TH() {
                     />
 
                     <div className="text-lg pb-1"> 10 - 20 </div>
-                    <div className="text-lg pb-1"> 3 </div>
+                    <div className="text-lg pb-1"> {props.quantity1} </div>
                     <div className="text-base pb-4"> MORE THAN 10</div>
                     <input
+                    className="w-12 mb-2 rounded "
                       type="number"
                       value={field[1].field}
                       onChange={(event) =>
@@ -71,9 +75,10 @@ function Page3TH() {
                     />
 
                     <div className="text-lg pb-1"> 20 - 30 </div>
-                    <div className="text-lg pb-1"> 8 </div>
+                    <div className="text-lg pb-1">{props.quantity2}</div>
                     <div className="text-base pb-4"> MORE THAN 20</div>
                     <input
+                    className="w-12 mb-2 rounded "
                       type="number"
                       value={field[2].field}
                       onChange={(event) =>
@@ -85,9 +90,10 @@ function Page3TH() {
                       }
                     />
                     <div className="text-lg pb-1"> 30 - 40 </div>
-                    <div className="text-lg pb-1"> 7 </div>
+                    <div className="text-lg pb-1"> {  props.quantity3} </div>
                     <div className="text-base pb-4"> MORE THAN 30</div>
                     <input
+                    className="w-12 mb-2 rounded "
                       type="number"
                       value={field[3].field}
                       onChange={(event) =>
@@ -99,9 +105,10 @@ function Page3TH() {
                       }
                     />
                     <div className="text-lg pb-1"> 40 - 50 </div>
-                    <div className="text-lg pb-1"> 5 </div>
+                    <div className="text-lg pb-1"> {props.quantity4} </div>
                     <div className="text-base pb-4"> MORE THAN 40</div>
                     <input
+                    className="w-12 mb-2 rounded "
                       type="number"
                       value={field[4].field}
                       onChange={(event) =>
@@ -136,12 +143,6 @@ function Page3TH() {
                     <Tooltip />
                     <Legend />
                     <Line type="monotone" dataKey="field" stroke="#8884d8" />
-                    {/* <Line type="monotone" dataKey="field2" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="field3" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="field4" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="field5" stroke="#8884d8" /> */}
-
-                    {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
                   </LineChart>
                 </ResponsiveContainer>
               </div>
