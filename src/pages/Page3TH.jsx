@@ -47,6 +47,7 @@ function Page3TH() {
                     <div className="text-lg pb-1"> 2</div>
                     <div className="text-base pb-4"> MORE THAN 0</div>
                     <input
+                    className=" w-10"
                       type="number"
                       value={field[0].field}
                       onChange={(event) =>
@@ -61,6 +62,7 @@ function Page3TH() {
                     <div className="text-lg pb-1"> 3 </div>
                     <div className="text-base pb-4"> MORE THAN 10</div>
                     <input
+                    className=" w-10"
                       type="number"
                       value={field[1].field}
                       onChange={(event) =>
@@ -76,6 +78,7 @@ function Page3TH() {
                     <div className="text-lg pb-1"> 8 </div>
                     <div className="text-base pb-4"> MORE THAN 20</div>
                     <input
+                    className=" w-10"
                       type="number"
                       value={field[2].field}
                       onChange={(event) =>
@@ -90,6 +93,7 @@ function Page3TH() {
                     <div className="text-lg pb-1"> 7 </div>
                     <div className="text-base pb-4"> MORE THAN 30</div>
                     <input
+                    className=" w-10"
                       type="number"
                       value={field[3].field}
                       onChange={(event) =>
@@ -104,6 +108,7 @@ function Page3TH() {
                     <div className="text-lg pb-1"> 5 </div>
                     <div className="text-base pb-4"> MORE THAN 40</div>
                     <input
+                    className=" w-10 h-8"
                       type="number"
                       value={field[4].field}
                       onChange={(event) =>
