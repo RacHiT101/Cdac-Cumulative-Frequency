@@ -39,7 +39,7 @@ const FrequencyTable = () => {
 
   return (
     <div className="flex flex-col gap-10">
-      <header className="text-blue text-center pt-5 -mb-12 font-extrabold text-5xl">CUMULATIVE FREQUENCY</header>
+      {/* <header className="text-blue text-center pt-5 -mb-12 font-extrabold text-5xl">CUMULATIVE FREQUENCY</header> */}
       <div className="flex justify-center gap-3 mt-10">
         <div className="bg-[#BFACE2] p-5 opacity-100 flex h-[650px] justify-center shadow-md shadow-slate-600 rounded-2xl">
           <Balloon className="" />
@@ -133,14 +133,14 @@ const FrequencyTable = () => {
               
             </div> */}
       </div>
-      <Page3TH
+      {/* <Page3TH
         quantity={quantity}
         quantity1={quantity1}
         quantity2={quantity2}
         quantity3={quantity3}
         quantity4={quantity4}
         className=""
-      />
+      /> */}
     </div>
   );
 };
