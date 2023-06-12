@@ -10,16 +10,17 @@ import {
   Tooltip,
 } from "recharts";
 
-function Page3TH(props) {
-  console.log(props.quantity);
+function Page3TH() {
+  
 
   const [field, setField] = useState([
-    { name: "10", field: "" },
+    { name: "10", field: ""},
     { name: "20", field: "" },
     { name: "30", field: "" },
-    { name: "40", field: "" },
+    { name: "40", field: ""},
     { name: "50", field: "" },
   ]);
+  
 
   return (
     <>
@@ -60,7 +61,7 @@ function Page3TH(props) {
                     />
 
                     <div className="text-lg pb-1"> 10 - 20 </div>
-                    <div className="text-lg pb-1"> {props.quantity1} </div>
+                    <div className="text-lg pb-1"> 3 </div>
                     <div className="text-base pb-4"> MORE THAN 10</div>
                     <input
                       className="w-12 mb-2 rounded text-xl text-right font-medium"
@@ -76,7 +77,7 @@ function Page3TH(props) {
                     />
 
                     <div className="text-lg pb-1"> 20 - 30 </div>
-                    <div className="text-lg pb-1">{props.quantity2}</div>
+                    <div className="text-lg pb-1"> 8 </div>
                     <div className="text-base pb-4"> MORE THAN 20</div>
                     <input
                       className="w-12 mb-2 rounded text-xl text-right font-medium"
@@ -91,7 +92,7 @@ function Page3TH(props) {
                       }
                     />
                     <div className="text-lg pb-1"> 30 - 40 </div>
-                    <div className="text-lg pb-1"> {props.quantity3} </div>
+                    <div className="text-lg pb-1"> 7 </div>
                     <div className="text-base pb-4"> MORE THAN 30</div>
                     <input
                       className="w-12 mb-2 rounded text-xl text-right font-medium"
@@ -106,7 +107,7 @@ function Page3TH(props) {
                       }
                     />
                     <div className="text-lg pb-1"> 40 - 50 </div>
-                    <div className="text-lg pb-1"> {props.quantity4} </div>
+                    <div className="text-lg pb-1"> 5 </div>
                     <div className="text-base pb-4"> MORE THAN 40</div>
                     <input
                       className="w-12 mb-2 rounded text-xl text-right font-medium"
@@ -144,6 +145,12 @@ function Page3TH(props) {
                     <Tooltip />
                     <Legend />
                     <Line type="monotone" dataKey="field" stroke="#8884d8" />
+                    {/* <Line type="monotone" dataKey="field2" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="field3" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="field4" stroke="#8884d8" />
+                    <Line type="monotone" dataKey="field5" stroke="#8884d8" /> */}
+
+                    {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
                   </LineChart>
                 </ResponsiveContainer>
               </div>
