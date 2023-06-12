@@ -1,14 +1,15 @@
-import { useEffect, useState,useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import "../styles.css";
 import { motion } from "framer-motion";
 import Draggable from "react-draggable";
 
-function Balloon() {
+function Balloon(props) {
   const [end, setEnd] = useState(false);
   const [popped, setPopped] = useState(false);
   const [random, setrandom] = useState(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  console.log(position)
+  const svgref = useRef(null);
+  console.log(position);
 
   useEffect(() => {
     function onMouseMove(event) {
@@ -61,6 +62,31 @@ function Balloon() {
     }
   }, [random]);
 
+  const restartAnimation = () => {
+    if (popped) {
+      const svgElement = svgref.current;
+      // const animationElement1 = svgElement.getElementById("boomAnimation");
+      // const animationElement2 = svgElement.getElementById("booAnimation");
+      // const animationElement3 = svgElement.getElementById("balloon");
+      // animationElement1.beginElement();
+      // animationElement2.beginElement();
+      // animationElement3.beginElement();
+
+    const gElements = svgElement.getElementsByTagName('g');
+    for (let i = 0; i < gElements.length; i++) {
+      const pathElements = gElements[i].getElementsByTagName('path');
+      for (let j = 0; j < pathElements.length; j++) {
+        const animateElements = pathElements[j].getElementsByTagName('animate');
+        for (let k = 0; k < animateElements.length; k++) {
+          animateElements[k].beginElement();
+        }
+      }
+    }
+
+    }
+    setPopped(false);
+  };
+
   return (
     <div id="balloon" className={popped ? "popped" : ""}>
       <div id="lil-monster" className="relative">
@@ -80,15 +106,16 @@ function Balloon() {
               position={position}
               onStop={(event, data) => setPosition({ x: data.x, y: data.y })}
             >
-            <div className="text-4xl relative  font-bold text-pink-700 top-28 ">
-              {random}              
-            </div>
+              <div className="text-4xl relative  font-bold text-pink-700 top-28 ">
+                {random}
+              </div>
             </Draggable>
           </motion.div>
         )}
         {/* <div onDrop={handleDrop} className="drop-area"></div> */}
         <div id="svg-container" className="">
           <svg
+            ref={svgref}
             width="348px"
             height="605px"
             viewBox="0 0 348 605"
@@ -323,6 +350,7 @@ function Balloon() {
                 transform="translate(134.000000, 0.000000)"
                 display="none"
               >
+                {/* Burst animation  */}
                 <animate
                   dur="0.07s"
                   id="boomAnimation"
@@ -520,11 +548,12 @@ function Balloon() {
               </g>
             </g>
           </svg>
-          
         </div>
       </div>
 
-      {/* <button onClick={restartAnimation} className="bg-black text-white">Animate</button> */}
+      <button onClick={restartAnimation} className="bg-black text-white">
+        Animate
+      </button>
     </div>
   );
 }

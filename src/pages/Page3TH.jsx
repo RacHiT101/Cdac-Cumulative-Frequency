@@ -44,12 +44,11 @@ function Page3TH(props) {
                     </div>
                     <div className="text-lg pb-1"> 0 - 10 </div>
                     <div className="text-lg pb-1">
-
                       {!props.quantity && props.quantity}
                     </div>
                     <div className="text-base pb-4"> MORE THAN 0</div>
                     <input
-                      className="w-12 mb-2 rounded "
+                      className="w-12 mb-2 rounded text-xl text-right font-medium"
                       type="number"
                       value={field[0].field}
                       onChange={(event) =>
@@ -64,7 +63,7 @@ function Page3TH(props) {
                     <div className="text-lg pb-1"> {props.quantity1} </div>
                     <div className="text-base pb-4"> MORE THAN 10</div>
                     <input
-                      className="w-12 mb-2 rounded "
+                      className="w-12 mb-2 rounded text-xl text-right font-medium"
                       type="number"
                       value={field[1].field}
                       onChange={(event) =>
@@ -80,7 +79,7 @@ function Page3TH(props) {
                     <div className="text-lg pb-1">{props.quantity2}</div>
                     <div className="text-base pb-4"> MORE THAN 20</div>
                     <input
-                      className="w-12 mb-2 rounded "
+                      className="w-12 mb-2 rounded text-xl text-right font-medium"
                       type="number"
                       value={field[2].field}
                       onChange={(event) =>
@@ -95,7 +94,7 @@ function Page3TH(props) {
                     <div className="text-lg pb-1"> {props.quantity3} </div>
                     <div className="text-base pb-4"> MORE THAN 30</div>
                     <input
-                      className="w-12 mb-2 rounded "
+                      className="w-12 mb-2 rounded text-xl text-right font-medium"
                       type="number"
                       value={field[3].field}
                       onChange={(event) =>
@@ -110,7 +109,7 @@ function Page3TH(props) {
                     <div className="text-lg pb-1"> {props.quantity4} </div>
                     <div className="text-base pb-4"> MORE THAN 40</div>
                     <input
-                      className="w-12 mb-2 rounded "
+                      className="w-12 mb-2 rounded text-xl text-right font-medium"
                       type="number"
                       value={field[4].field}
                       onChange={(event) =>

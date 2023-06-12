@@ -16,7 +16,7 @@ const FrequencyTable = () => {
   const getPosition = () => {
     const x = boxRef.current.offsetLeft;
     setX(x);
-    setQuantity(10)
+    // setQuantity(10)
     const y = boxRef.current.offsetTop;
     setY(y);
   };
@@ -41,6 +41,7 @@ const FrequencyTable = () => {
     <div className="flex flex-col gap-10">
       <div className="flex justify-center gap-3 mt-10">
         <div className="bg-[#BFACE2] p-5 opacity-100 flex h-[650px] justify-center shadow-md shadow-slate-600 rounded-2xl">
+          {/* <p className="text-2xl font-bold ">Pop the Balloon</p> */}
           <Balloon className="" />
         </div>
         <div className="flex gap-3 flex-col h-[650px] ">
