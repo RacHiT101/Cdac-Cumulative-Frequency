@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import Balloon from "../components/Balloon";
+// import Balloon from "../components/Balloon";
 import { useDrop } from "react-dnd";
 import Page3TH from "./Page3TH";
 
@@ -42,7 +42,7 @@ const FrequencyTable = () => {
       {/* <header className="text-blue text-center pt-5 -mb-12 font-extrabold text-5xl">CUMULATIVE FREQUENCY</header> */}
       <div className="flex justify-center gap-3 mt-10">
         <div className="bg-[#BFACE2] p-5 opacity-100 flex h-[650px] justify-center shadow-md shadow-slate-600 rounded-2xl">
-          <Balloon className="" />
+          {/* <Balloon className="" /> */}
         </div>
         <div className="flex gap-3 flex-col h-[650px] ">
           <div className=" bg-[#BFDCE5] h-full shadow-md shadow-slate-600 rounded-xl px-12">
@@ -133,14 +133,14 @@ const FrequencyTable = () => {
               
             </div> */}
       </div>
-      {/* <Page3TH
+      <Page3TH
         quantity={quantity}
         quantity1={quantity1}
         quantity2={quantity2}
         quantity3={quantity3}
         quantity4={quantity4}
         className=""
-      /> */}
+      />
     </div>
   );
 };
